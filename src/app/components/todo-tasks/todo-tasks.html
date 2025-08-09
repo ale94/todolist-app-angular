@@ -1,18 +1,5 @@
 <div class="d-flex flex-column gap-2">
   @for (task of tasks(); track $index) {
-  <div
-    class="task-item p-3 d-flex justify-content-between align-items-center"
-    [class.completed]="task.completed"
-  >
-    <span class="fw-medium">{{ task.name }}</span>
-    <div>
-      <button class="btn-icon text-warning me-2" title="Editar">
-        <i class="bi bi-pencil-fill"></i>
-      </button>
-      <button class="btn-icon text-danger" title="Eliminar">
-        <i class="bi bi-trash-fill"></i>
-      </button>
-    </div>
-  </div>
+  <todo-tasks-item [task]="task" />
   }
 </div>
