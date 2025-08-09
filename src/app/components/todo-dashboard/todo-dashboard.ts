@@ -12,14 +12,17 @@ export class TodoDashboard {
   title = signal('Lista de Tareas');
   tasks = signal<Task[]>([
     {
+      id: 1,
       name: 'Tarea 1',
       completed: true,
     },
     {
+      id: 2,
       name: 'Tarea 2',
       completed: false,
     },
     {
+      id: 3,
       name: 'Tarea 3',
       completed: true,
     },
@@ -27,5 +30,15 @@ export class TodoDashboard {
 
   addTask(t: Task) {
     this.tasks.update((task) => [...task, t]);
+  }
+
+  updateTaskCompletion(inputTask: Task) {
+    this.tasks.update((tasks) =>
+      tasks.map((task) =>
+        task.id === inputTask.id
+          ? { ...task, completed: !task.completed }
+          : task
+      )
+    );
   }
 }

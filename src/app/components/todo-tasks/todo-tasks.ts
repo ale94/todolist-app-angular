@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Task } from '../../interfaces/task';
 import { TodoTasksItem } from '../todo-tasks-item/todo-tasks-item';
 
@@ -9,4 +9,9 @@ import { TodoTasksItem } from '../todo-tasks-item/todo-tasks-item';
 })
 export class TodoTasks {
   tasks = input.required<Task[]>();
+  updateTask = output<Task>();
+
+  updateTaskCompletion(task: Task) {
+    this.updateTask.emit(task);
+  }
 }
