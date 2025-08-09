@@ -5,14 +5,14 @@
         <!-- Card principal -->
         <div class="card shadow p-4">
           <h3 class="text-center mb-4 fw-bold text-info">
-            <i class="bi bi-list-check me-2"></i>Lista de Tareas
+            <i class="bi bi-list-check me-2"></i>{{title()}}
           </h3>
 
           <!-- Input para agregar tarea -->
           <todo-input />
 
           <!-- Lista de tareas -->
-          <todo-tasks />
+          <todo-tasks [tasks]=tasks()/>
         </div>
       </div>
     </div>
