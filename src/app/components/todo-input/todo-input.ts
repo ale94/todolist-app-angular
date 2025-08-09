@@ -13,6 +13,7 @@ export class TodoInput {
 
   addTask() {
     const newTask: Task = {
+      id: Math.floor(Math.random() * (100 - 1 + 1)) + 1,
       name: this.name(),
       completed: false,
     };

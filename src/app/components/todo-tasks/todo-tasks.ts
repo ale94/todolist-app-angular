@@ -10,8 +10,14 @@ import { TodoTasksItem } from '../todo-tasks-item/todo-tasks-item';
 export class TodoTasks {
   tasks = input.required<Task[]>();
   updateTask = output<Task>();
+  delete = output<number>();
 
   updateTaskCompletion(task: Task) {
     this.updateTask.emit(task);
   }
+
+  deleteTask(id: number) {
+    this.delete.emit(id);
+  }
+
 }

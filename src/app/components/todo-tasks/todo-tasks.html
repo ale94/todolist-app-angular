@@ -1,5 +1,9 @@
 <div class="d-flex flex-column gap-2">
   @for (task of tasks(); track task.id) {
-  <todo-tasks-item [task]="task" (dblclick)="updateTaskCompletion(task)"/>
+  <todo-tasks-item
+    [task]="task"
+    (dblclick)="updateTaskCompletion(task)"
+    (delete)="deleteTask($event)"
+  />
   }
 </div>

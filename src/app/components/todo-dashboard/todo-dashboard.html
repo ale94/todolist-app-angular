@@ -12,7 +12,11 @@
           <todo-input (newTask)="addTask($event)" />
 
           <!-- Lista de tareas -->
-          <todo-tasks [tasks]="tasks()" (updateTask)="updateTaskCompletion($event)" />
+          <todo-tasks
+          [tasks]="tasks()"
+          (updateTask)="updateTaskCompletion($event)"
+          (delete)="deleteTask($event)"
+          />
         </div>
       </div>
     </div>

@@ -41,4 +41,8 @@ export class TodoDashboard {
       )
     );
   }
+
+  deleteTask(id: number) {
+    this.tasks.update((tasks) => tasks.filter((task) => task.id !== id));
+  }
 }
