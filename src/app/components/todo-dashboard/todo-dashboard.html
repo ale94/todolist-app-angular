@@ -1,0 +1,63 @@
+<div class="min-vh-100 d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <!-- Card principal -->
+        <div class="card shadow p-4">
+          <h3 class="text-center mb-4 fw-bold text-info">
+            <i class="bi bi-list-check me-2"></i>Lista de Tareas
+          </h3>
+
+          <!-- Input para agregar tarea -->
+          <div class="input-group mb-4 shadow-sm">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Escribe una tarea..."
+            />
+            <button
+              class="btn btn-info text-dark"
+              type="button"
+              title="Agregar tarea"
+            >
+              <i class="bi bi-plus-lg"></i>
+            </button>
+          </div>
+
+          <!-- Lista de tareas -->
+          <div class="d-flex flex-column gap-2">
+            <!-- Tarea pendiente -->
+            <div
+              class="task-item p-3 d-flex justify-content-between align-items-center"
+            >
+              <span class="fw-medium">Diseñar la UI</span>
+              <div>
+                <button class="btn-icon text-warning me-2" title="Editar">
+                  <i class="bi bi-pencil-fill"></i>
+                </button>
+                <button class="btn-icon text-danger" title="Eliminar">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Tarea completada -->
+            <div
+              class="task-item completed p-3 d-flex justify-content-between align-items-center"
+            >
+              <span>Tarea completada</span>
+              <div>
+                <button class="btn-icon text-warning me-2" title="Editar">
+                  <i class="bi bi-pencil-fill"></i>
+                </button>
+                <button class="btn-icon text-danger" title="Eliminar">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
