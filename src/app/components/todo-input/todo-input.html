@@ -1,6 +1,18 @@
 <div class="input-group mb-4 shadow-sm">
-  <input type="text" class="form-control" placeholder="Escribe una tarea..." />
-  <button class="btn btn-info text-dark" type="button" title="Agregar tarea">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Escribe una tarea..."
+    [value]="name()"
+    (change)="name.set(txtName.value)"
+    #txtName
+  />
+  <button
+    class="btn btn-info text-dark"
+    type="button"
+    title="Agregar tarea"
+    (click)="addTask()"
+  >
     <i class="bi bi-plus-lg"></i>
   </button>
 </div>

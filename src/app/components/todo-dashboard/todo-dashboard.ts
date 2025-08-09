@@ -24,4 +24,8 @@ export class TodoDashboard {
       completed: true,
     },
   ]);
+
+  addTask(t: Task) {
+    this.tasks.update((task) => [...task, t]);
+  }
 }

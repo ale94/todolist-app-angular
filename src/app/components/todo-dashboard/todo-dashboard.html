@@ -9,7 +9,7 @@
           </h3>
 
           <!-- Input para agregar tarea -->
-          <todo-input />
+          <todo-input (newTask)="addTask($event)"/>
 
           <!-- Lista de tareas -->
           <todo-tasks [tasks]=tasks()/>
