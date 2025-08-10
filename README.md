@@ -16,7 +16,7 @@ Permite agregar, editar, marcar como completadas y eliminar tareas de forma intu
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ## 📷 Capturas 📷
-_Agrega aquí imágenes del proyecto para mostrar la interfaz_
+<a href="https://ibb.co/N6nV6t0y"><img src="https://i.ibb.co/Z61L6GQM/todo.png" alt="todo" border="0"></a>
 
 ## 📦 Instalación 📦
 1. Clonar el repositorio:
