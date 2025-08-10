@@ -45,4 +45,12 @@ export class TodoDashboard {
   deleteTask(id: number) {
     this.tasks.update((tasks) => tasks.filter((task) => task.id !== id));
   }
+
+  editTask(updatedTask: Task) {
+    this.tasks.update((tasks) =>
+      tasks.map((t) =>
+        t.id === updatedTask.id ? { ...t, name: updatedTask.name } : t
+      )
+    );
+  }
 }

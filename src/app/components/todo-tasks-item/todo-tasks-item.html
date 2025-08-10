@@ -2,11 +2,23 @@
   class="task-item p-3 d-flex justify-content-between align-items-center"
   [class.completed]="task().completed"
 >
-  <span class="fw-medium">{{ task().name }}</span>
+  @if (!isEdited()) {
+    <span class="fw-medium">{{ task().name }}</span>
+  }
+  @else {
+    <input
+    type="text"
+    class="form-control w-75"
+    [value]="task().name"
+    (keydown.enter)="editTask(txtName.value, task().id)"
+    #txtName
+    >
+  }
   <div>
     <button
       class="btn-icon text-warning me-2"
       title="Editar"
+      (click)="changeIsEdit()"
     >
       <i class="bi bi-pencil-fill"></i>
     </button>

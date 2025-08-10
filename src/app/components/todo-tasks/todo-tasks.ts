@@ -11,6 +11,7 @@ export class TodoTasks {
   tasks = input.required<Task[]>();
   updateTask = output<Task>();
   delete = output<number>();
+  edit = output<Task>();
 
   updateTaskCompletion(task: Task) {
     this.updateTask.emit(task);
@@ -18,5 +19,9 @@ export class TodoTasks {
 
   deleteTask(id: number) {
     this.delete.emit(id);
+  }
+
+  editTask(task: Task) {
+    this.edit.emit(task);
   }
 }
