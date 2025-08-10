@@ -10,26 +10,31 @@ import { Task } from '../../interfaces/task';
 })
 export class TodoDashboard {
   title = signal('Lista de Tareas');
-  tasks = signal<Task[]>([
-    {
-      id: 1,
-      name: 'Realizar curso de angular',
-      completed: true,
-    },
-    {
-      id: 2,
-      name: 'Escuchar musica de eminem',
-      completed: false,
-    },
-    {
-      id: 3,
-      name: 'Ir a correr',
-      completed: true,
-    },
-  ]);
+  // tasks = signal<Task[]>([
+  //   {
+  //     id: 1,
+  //     name: 'Realizar curso de angular',
+  //     completed: true,
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Escuchar musica de eminem',
+  //     completed: false,
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Ir a correr',
+  //     completed: true,
+  //   },
+  // ]);
+
+  tasks = signal<Task[]>(
+    JSON.parse(sessionStorage.getItem('listTasks') || '[]')
+  );
 
   addTask(t: Task) {
     this.tasks.update((task) => [...task, t]);
+    sessionStorage.setItem('listTasks', JSON.stringify(this.tasks()));
   }
 
   updateTaskCompletion(inputTask: Task) {
@@ -40,10 +45,12 @@ export class TodoDashboard {
           : task
       )
     );
+    sessionStorage.setItem('listTasks', JSON.stringify(this.tasks()));
   }
 
   deleteTask(id: number) {
     this.tasks.update((tasks) => tasks.filter((task) => task.id !== id));
+    sessionStorage.setItem('listTasks', JSON.stringify(this.tasks()));
   }
 
   editTask(updatedTask: Task) {
@@ -52,5 +59,6 @@ export class TodoDashboard {
         t.id === updatedTask.id ? { ...t, name: updatedTask.name } : t
       )
     );
+    sessionStorage.setItem('listTasks', JSON.stringify(this.tasks()));
   }
 }
