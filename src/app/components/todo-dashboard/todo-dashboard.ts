@@ -13,17 +13,17 @@ export class TodoDashboard {
   tasks = signal<Task[]>([
     {
       id: 1,
-      name: 'Tarea 1',
+      name: 'Realizar curso de angular',
       completed: true,
     },
     {
       id: 2,
-      name: 'Tarea 2',
+      name: 'Escuchar musica de eminem',
       completed: false,
     },
     {
       id: 3,
-      name: 'Tarea 3',
+      name: 'Ir a correr',
       completed: true,
     },
   ]);
