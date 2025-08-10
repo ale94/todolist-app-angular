@@ -21,7 +21,7 @@ _Agrega aquí imágenes del proyecto para mostrar la interfaz_
 ## 📦 Instalación 📦
 1. Clonar el repositorio:
    `bash
-   git clone https://github.com/usuario/todo-list-angular.git`
+   git clone https://github.com/ale94/todolist-app-angular.git`
 2. Instalar dependencias:
   `npm install`
 3. Ejecutar el proyecto:
