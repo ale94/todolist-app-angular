@@ -19,5 +19,4 @@ export class TodoTasks {
   deleteTask(id: number) {
     this.delete.emit(id);
   }
-
 }

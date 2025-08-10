@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { Task } from '../../interfaces/task';
 
 @Component({
@@ -9,8 +9,10 @@ import { Task } from '../../interfaces/task';
 export class TodoTasksItem {
   task = input.required<Task>();
   delete = output<number>();
+  edit = output<string>();
 
   deleteTask(id: number) {
     this.delete.emit(id);
   }
+
 }
